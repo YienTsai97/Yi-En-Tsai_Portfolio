@@ -1,0 +1,39 @@
+@mixin boxCol {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: $width_formal;
+    /*border: 1px solid green;*/
+}
+
+@mixin boxColScroll {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: $width_formal;
+    /*border: 1px solid green;*/
+}
+
+
+@mixin boxRow{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: $width_formal;
+    /*border: 1px solid green;*/
+}
+
+@mixin fade-in{
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range-start: 0px;
+    animation-range-end: 250px;
+}
+
+@keyframes fade-in {
+    from{ opacity: 0; transform: translateY(80px);}
+    to{opacity: 1;  transform: translateY(0);}
+}

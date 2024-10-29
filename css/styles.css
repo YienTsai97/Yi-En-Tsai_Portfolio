@@ -1,0 +1,369 @@
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+header svg {
+  margin: 10px;
+}
+header li a:hover {
+  font-weight: 500;
+}
+
+footer {
+  color: #f5f5f5;
+  background-color: #218bff;
+  font-family: "Montserrat";
+}
+footer p {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+footer ul {
+  list-style-type: none;
+  padding: 0px;
+}
+footer ul li {
+  margin: 0px 40px 10px 0px;
+}
+footer ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+footer ul li:hover {
+  font-weight: 500;
+}
+footer svg {
+  margin-right: 40px;
+}
+footer svg:hover {
+  transform: scale(120%);
+  animation: transform ease;
+  fill: white;
+}
+
+body {
+  padding-top: 60px;
+  font-family: "Montserrat";
+  background-color: rgb(255, 255, 255);
+  background-image: radial-gradient(at 73% 63%, rgb(238, 243, 249) 0px, transparent 70%), radial-gradient(at 31% 36%, rgb(250, 230, 255) 0px, transparent 70%);
+  max-width: 100%;
+  animation: gradient 13s ease infinite;
+  background-size: 200% 200%;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 20%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 50% 70%;
+  }
+  100% {
+    background-position: 0% 20%;
+  }
+}
+body Header {
+  font-family: "Montserrat";
+}
+body section {
+  height: auto;
+  padding-top: 150px;
+}
+body section .sectionTop {
+  margin-bottom: 50px;
+}
+body .section_content {
+  animation: fade-in linear;
+  animation-timeline: view();
+  animation-range-start: 0px;
+  animation-range-end: 250px;
+}
+body main {
+  font-family: "Montserrat";
+}
+body main h1 {
+  font-family: "Montserrat";
+  font-size: 64px;
+  font-weight: bolder;
+  background-image: linear-gradient(45deg, #3b82f6, #c084fc, #db2777);
+  color: transparent;
+  -webkit-background-clip: text;
+  /* Edge, Chrome */
+  background-clip: text;
+  /* Safari, FF */
+  animation: title_gradient 4s linear infinite;
+  background-size: 100% 100%;
+}
+@keyframes title_gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+body main h2 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: transparent;
+  -webkit-background-clip: text;
+  /* Edge, Chrome */
+  background-clip: text;
+  /* Safari, FF */
+  background-image: linear-gradient(to right, #218bff, #c084fc, #db2777);
+}
+body main h5 {
+  margin-bottom: 30px;
+}
+body main p {
+  font-size: 14px;
+}
+body main #home {
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 768px;
+}
+body main #home .intro {
+  margin-bottom: 20px;
+}
+body main #home a {
+  color: inherit;
+  text-decoration: none;
+}
+body main #home svg {
+  margin: 0px 0px 0px 5px;
+}
+body main #home button:hover {
+  background-color: #db2777;
+}
+body main #home .profile_mask {
+  -webkit-mask-image: url(../image/home_mask_graph.png);
+  mask-image: url(../image/home_mask_graph.png);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  box-sizing: border-box;
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+@media only screen and (max-width: 650px) {
+  body main #home {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: auto;
+    align-items: center;
+    gap: 30px;
+  }
+}
+body main #about {
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 768px;
+  /*border: 1px solid green;*/
+}
+body main #about p {
+  max-width: 450px;
+  margin-bottom: 50px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+body main #about svg {
+  margin: 0px 0px 3px 5px;
+}
+body main #about button:hover {
+  background-color: #db2777;
+}
+body main #skills {
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 768px;
+  /*border: 1px solid green;*/
+}
+body main #skills .skillGroup {
+  margin-bottom: 30px;
+}
+body main #skills .skillGroup img {
+  margin: 10px;
+  width: 40px;
+}
+body main #skills .skillGroup img:hover {
+  transform: scale(110%);
+  animation: transform ease;
+}
+body main #work_experiences {
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 768px;
+  /*border: 1px solid green;*/
+}
+body main #work_experiences ul {
+  margin-bottom: 20px;
+  justify-content: center;
+}
+body main #work_experiences a {
+  color: black;
+  background: none;
+}
+body main #work_experiences a:hover {
+  color: #218bff;
+  font-weight: 600;
+  fill: #218bff;
+}
+body main #work_experiences a svg {
+  margin: 0px 5px 3px 0px;
+}
+body main #work_experiences .nav-pills .nav-link.active,
+body main #work_experiences .nav-pills .show > .nav-link {
+  color: #218bff;
+  fill: #218bff;
+  font-weight: 600;
+  background: none;
+}
+body main #work_experiences .tab-content .tab-pane {
+  max-width: 500px;
+  max-height: 500px;
+  /*background-color: #CCC;*/
+}
+body main #work_experiences .tab-content .tab-pane .qualification__data {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  column-gap: 1.5rem;
+  text-align: left;
+}
+body main #work_experiences .tab-content .tab-pane .qualification__rounder {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: #218bff;
+  border-radius: 50%;
+}
+body main #work_experiences .tab-content .tab-pane .qualification__line {
+  display: block;
+  width: 1.3px;
+  height: 100%;
+  background-color: #218bff;
+  transform: translate(6px, -7px);
+}
+body main #work_experiences .tab-content .tab-pane .qualification__title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+body main #work_experiences .tab-content .tab-pane .qualification__subtitle,
+body main #work_experiences .tab-content .tab-pane .qualification__calendar {
+  color: gray;
+}
+body main #work_experiences .tab-content .tab-pane p {
+  font-size: 12px;
+}
+body main #work_experiences .tab-content .tab-pane svg {
+  margin: 0px 5px 3px 0px;
+}
+body main #projects {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*border: 1px solid green;*/
+}
+body main #projects h2 + h6 {
+  text-align: center;
+}
+body main #projects .swiper .swiper-slide {
+  padding: 0px 50px 0px 50px;
+  /*border: 1px solid rgb(208, 0, 208);*/
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  margin-bottom: 30px;
+}
+body main #projects .swiper .card {
+  flex-direction: column;
+  max-width: auto;
+  max-height: auto;
+  background-color: rgba(255, 255, 255, 0.4666666667);
+}
+body main #projects .swiper .card h5 {
+  margin-bottom: 10px;
+}
+body main #projects .swiper .card h6 {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+body main #projects .swiper .text-body-secondary img {
+  column-gap: 15px;
+  width: 22px;
+}
+body main #projects .swiper .project-preview + img {
+  object-fit: cover;
+}
+body main #projects .swiper a {
+  transition: box-shadow 0.3s;
+}
+body main #projects .swiper a:link {
+  text-decoration: none;
+}
+body main #projects .swiper a:visited {
+  text-decoration: none;
+}
+body main #projects .swiper a:hover {
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(33, 33, 33, 0.2);
+}
+body main #projects .swiper a:active {
+  text-decoration: none;
+}
+@media only screen and (max-width: 650px) {
+  body main .projects .swiper .swiper-slide {
+    padding: 0px;
+  }
+  body main .swiper-button-next:after,
+  body main .swiper-rtl .swiper-button-prev:after {
+    content: "none";
+  }
+  body main .swiper-button-prev:after,
+  body main .swiper-rtl .swiper-button-next:after {
+    content: "none";
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
