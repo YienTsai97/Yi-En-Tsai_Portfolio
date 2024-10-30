@@ -211,13 +211,14 @@ body {
                 margin-bottom: 30px;
 
 
-                img {
+                img,
+                svg {
                     margin: 10px;
                     width: 40px;
+                    transition: all 0.5s ease;
 
                     &:hover {
-                        transform: scale(110%);
-                        animation: transform ease;
+                        transform: scale(120%);
                     }
                 }
             }
@@ -355,7 +356,7 @@ body {
                     object-fit: cover;
                 }
 
-                a{
+                a {
                     transition: box-shadow .3s;
                 }
 
@@ -369,7 +370,7 @@ body {
 
                 a:hover {
                     text-decoration: none;
-                    box-shadow: 0 0 15px rgba(33,33,33,.2);
+                    box-shadow: 0 0 15px rgba(33, 33, 33, .2);
                 }
 
                 a:active {

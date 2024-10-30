@@ -219,13 +219,15 @@ body main #skills {
 body main #skills .skillGroup {
   margin-bottom: 30px;
 }
-body main #skills .skillGroup img {
+body main #skills .skillGroup img,
+body main #skills .skillGroup svg {
   margin: 10px;
   width: 40px;
+  transition: all 0.5s ease;
 }
-body main #skills .skillGroup img:hover {
-  transform: scale(110%);
-  animation: transform ease;
+body main #skills .skillGroup img:hover,
+body main #skills .skillGroup svg:hover {
+  transform: scale(120%);
 }
 body main #work_experiences {
   text-align: center;
