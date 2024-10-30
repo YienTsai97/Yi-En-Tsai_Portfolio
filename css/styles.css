@@ -18,11 +18,16 @@
 header svg {
   margin: 10px;
 }
+header li {
+  transition: all 1s ease;
+}
 header li a:hover {
   font-weight: 500;
+  transform: scale(105%);
 }
 
 footer {
+  margin-top: 3rem;
   color: #f5f5f5;
   background-color: #218bff;
   font-family: "Montserrat";
@@ -58,7 +63,7 @@ body {
   padding-top: 60px;
   font-family: "Montserrat";
   background-color: rgb(255, 255, 255);
-  background-image: radial-gradient(at 73% 63%, rgb(238, 243, 249) 0px, transparent 70%), radial-gradient(at 31% 36%, rgb(250, 230, 255) 0px, transparent 70%);
+  background-image: radial-gradient(at 73% 63%, rgb(241, 243, 246) 0px, transparent 70%), radial-gradient(at 31% 36%, rgb(244, 238, 240) 0px, transparent 70%);
   max-width: 100%;
   animation: gradient 13s ease infinite;
   background-size: 200% 200%;
@@ -312,7 +317,6 @@ body main #projects h2 + h6 {
 }
 body main #projects .swiper .swiper-slide {
   padding: 0px 50px 0px 50px;
-  /*border: 1px solid rgb(208, 0, 208);*/
   display: flex;
   justify-content: center;
   align-items: top;
@@ -320,12 +324,12 @@ body main #projects .swiper .swiper-slide {
 }
 body main #projects .swiper .card {
   flex-direction: column;
-  max-width: auto;
-  max-height: auto;
+  width: auto;
   background-color: rgba(255, 255, 255, 0.4666666667);
+  overflow: hidden;
 }
 body main #projects .swiper .card h5 {
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 body main #projects .swiper .card h6 {
   font-size: 14px;
@@ -354,17 +358,21 @@ body main #projects .swiper a:hover {
 body main #projects .swiper a:active {
   text-decoration: none;
 }
+
 @media only screen and (max-width: 650px) {
-  body main .projects .swiper .swiper-slide {
+  .projects .swiper .swiper-slide {
     padding: 0px;
   }
-  body main .swiper-button-next:after,
-  body main .swiper-rtl .swiper-button-prev:after {
+  .swiper-button-next:after,
+  .swiper-rtl .swiper-button-prev:after {
     content: "none";
   }
-  body main .swiper-button-prev:after,
-  body main .swiper-rtl .swiper-button-next:after {
+  .swiper-button-prev:after,
+  .swiper-rtl .swiper-button-next:after {
     content: "none";
+  }
+  .card {
+    height: fit-content;
   }
 }
 

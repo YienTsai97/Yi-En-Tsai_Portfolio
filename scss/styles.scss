@@ -22,8 +22,8 @@ body {
     font-family: "Montserrat";
     background-color: rgb(255, 255, 255);
     background-image:
-        radial-gradient(at 73% 63%, rgb(238, 243, 249) 0px, transparent 70%),
-        radial-gradient(at 31% 36%, rgb(250, 230, 255) 0px, transparent 70%);
+        radial-gradient(at 73% 63%, rgb(241, 243, 246) 0px, transparent 70%),
+        radial-gradient(at 31% 36%, rgb(244, 238, 240) 0px, transparent 70%);
     max-width: 100%;
     animation: gradient 13s ease infinite;
     background-size: 200% 200%;
@@ -324,7 +324,6 @@ body {
 
                 .swiper-slide {
                     padding: 0px 50px 0px 50px;
-                    /*border: 1px solid rgb(208, 0, 208);*/
                     display: flex;
                     justify-content: center;
                     align-items: top;
@@ -333,12 +332,12 @@ body {
 
                 .card {
                     flex-direction: column;
-                    max-width: auto;
-                    max-height: auto;
+                    width: auto;
                     background-color: #ffffff77;
+                    overflow: hidden;
 
                     h5 {
-                        margin-bottom: 10px;
+                        margin: 10px 0;
                     }
 
                     h6 {
@@ -380,25 +379,28 @@ body {
             }
         }
 
-        @media only screen and (max-width: 650px) {
-
-
-            .projects .swiper .swiper-slide {
-                padding: 0px;
-            }
-
-            .swiper-button-next:after,
-            .swiper-rtl .swiper-button-prev:after {
-                content: 'none';
-            }
-
-            .swiper-button-prev:after,
-            .swiper-rtl .swiper-button-next:after {
-                content: 'none';
-            }
-        }
 
     }
+}
+
+@media only screen and (max-width: 650px) {
 
 
+    .projects .swiper .swiper-slide {
+        padding: 0px;
+    }
+
+    .swiper-button-next:after,
+    .swiper-rtl .swiper-button-prev:after {
+        content: 'none';
+    }
+
+    .swiper-button-prev:after,
+    .swiper-rtl .swiper-button-next:after {
+        content: 'none';
+    }
+
+    .card {
+        height: fit-content;
+    }
 }
