@@ -15,6 +15,9 @@
     transform: translateY(0);
   }
 }
+header {
+  z-index: 10;
+}
 header svg {
   margin: 10px;
 }
@@ -27,6 +30,7 @@ header li a:hover {
 }
 
 footer {
+  z-index: 10;
   margin-top: 3rem;
   color: #f5f5f5;
   background-color: #218bff;
@@ -92,11 +96,8 @@ body section {
 body section .sectionTop {
   margin-bottom: 50px;
 }
-body .section_content {
-  animation: fade-in linear;
-  animation-timeline: view();
-  animation-range-start: 0px;
-  animation-range-end: 250px;
+body .sectionMain {
+  height: fit-content;
 }
 body main {
   font-family: "Montserrat";
@@ -141,6 +142,7 @@ body main p {
 }
 body main #home {
   display: flex;
+  flex-direction: row;
   margin: auto;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -159,39 +161,49 @@ body main #home svg {
 body main #home button:hover {
   background-color: #db2777;
 }
-body main #home .profile_mask {
-  -webkit-mask-image: url(../image/home_mask_graph.png);
-  mask-image: url(../image/home_mask_graph.png);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  box-sizing: border-box;
-  transform: translatey(0px);
+body main #home .profile {
   animation: float 6s ease-in-out infinite;
+}
+body main #home .profile-img {
+  background: url(../image/selfie.jpg);
+  background-size: cover;
+  background-position: center center;
+  width: 250px;
+  height: 340px;
+  animation: bubble 10s linear infinite;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.553);
 }
 @keyframes float {
   0% {
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(0px);
   }
   50% {
-    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
     transform: translatey(-20px);
   }
   100% {
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(0px);
+  }
+}
+@keyframes bubble {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   }
 }
 @media only screen and (max-width: 650px) {
   body main #home {
-    display: flex;
     flex-direction: column-reverse;
     margin: auto;
     align-items: center;
     gap: 30px;
   }
 }
-body main #about {
+body #about {
   text-align: center;
   margin: auto;
   display: flex;
@@ -200,19 +212,19 @@ body main #about {
   max-width: 768px;
   /*border: 1px solid green;*/
 }
-body main #about p {
+body #about p {
   max-width: 450px;
   margin-bottom: 50px;
   line-height: 1.5;
   margin-bottom: 10px;
 }
-body main #about svg {
+body #about svg {
   margin: 0px 0px 3px 5px;
 }
-body main #about button:hover {
+body #about button:hover {
   background-color: #db2777;
 }
-body main #skills {
+body #skills {
   text-align: center;
   margin: auto;
   display: flex;
@@ -221,20 +233,20 @@ body main #skills {
   max-width: 768px;
   /*border: 1px solid green;*/
 }
-body main #skills .skillGroup {
+body #skills .skillGroup {
   margin-bottom: 30px;
 }
-body main #skills .skillGroup img,
-body main #skills .skillGroup svg {
+body #skills .skillGroup img,
+body #skills .skillGroup svg {
   margin: 10px;
   width: 40px;
   transition: all 0.5s ease;
 }
-body main #skills .skillGroup img:hover,
-body main #skills .skillGroup svg:hover {
+body #skills .skillGroup img:hover,
+body #skills .skillGroup svg:hover {
   transform: scale(120%);
 }
-body main #work_experiences {
+body #work_experiences {
   text-align: center;
   margin: auto;
   display: flex;
@@ -243,120 +255,160 @@ body main #work_experiences {
   max-width: 768px;
   /*border: 1px solid green;*/
 }
-body main #work_experiences ul {
+body #work_experiences ul {
   margin-bottom: 20px;
   justify-content: center;
 }
-body main #work_experiences a {
+body #work_experiences a {
   color: black;
   background: none;
 }
-body main #work_experiences a:hover {
+body #work_experiences a:hover {
   color: #218bff;
   font-weight: 600;
   fill: #218bff;
 }
-body main #work_experiences a svg {
+body #work_experiences a svg {
   margin: 0px 5px 3px 0px;
 }
-body main #work_experiences .nav-pills .nav-link.active,
-body main #work_experiences .nav-pills .show > .nav-link {
+body #work_experiences .nav-pills .nav-link.active,
+body #work_experiences .nav-pills .show > .nav-link {
   color: #218bff;
   fill: #218bff;
   font-weight: 600;
   background: none;
 }
-body main #work_experiences .tab-content .tab-pane {
+body #work_experiences .tab-content .tab-pane {
   max-width: 500px;
-  max-height: 500px;
   /*background-color: #CCC;*/
 }
-body main #work_experiences .tab-content .tab-pane .qualification__data {
+body #work_experiences .tab-content .tab-pane .qualification__data {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
   column-gap: 1.5rem;
   text-align: left;
 }
-body main #work_experiences .tab-content .tab-pane .qualification__rounder {
+body #work_experiences .tab-content .tab-pane .qualification__rounder {
   display: inline-block;
   width: 13px;
   height: 13px;
   background-color: #218bff;
   border-radius: 50%;
 }
-body main #work_experiences .tab-content .tab-pane .qualification__line {
+body #work_experiences .tab-content .tab-pane .qualification__line {
   display: block;
   width: 1.3px;
   height: 100%;
   background-color: #218bff;
   transform: translate(6px, -7px);
 }
-body main #work_experiences .tab-content .tab-pane .qualification__title {
+body #work_experiences .tab-content .tab-pane .qualification__title {
   font-weight: bold;
   margin-top: 10px;
 }
-body main #work_experiences .tab-content .tab-pane .qualification__subtitle,
-body main #work_experiences .tab-content .tab-pane .qualification__calendar {
+body #work_experiences .tab-content .tab-pane .qualification__subtitle,
+body #work_experiences .tab-content .tab-pane .qualification__calendar {
   color: gray;
 }
-body main #work_experiences .tab-content .tab-pane p {
+body #work_experiences .tab-content .tab-pane p {
   font-size: 12px;
 }
-body main #work_experiences .tab-content .tab-pane svg {
+body #work_experiences .tab-content .tab-pane svg {
   margin: 0px 5px 3px 0px;
 }
-body main #projects {
+body #projects {
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   /*border: 1px solid green;*/
 }
-body main #projects h2 + h6 {
+body #projects h2 + h6 {
   text-align: center;
 }
-body main #projects .swiper .swiper-slide {
+body #projects .swiper .swiper-slide {
   padding: 0px 50px 0px 50px;
   display: flex;
   justify-content: center;
   align-items: top;
   margin-bottom: 30px;
 }
-body main #projects .swiper .card {
+body #projects .swiper .card {
   flex-direction: column;
   width: auto;
   background-color: rgba(255, 255, 255, 0.4666666667);
   overflow: hidden;
 }
-body main #projects .swiper .card h5 {
+body #projects .swiper .card h5 {
   margin: 10px 0;
 }
-body main #projects .swiper .card h6 {
+body #projects .swiper .card h6 {
   font-size: 14px;
   margin-bottom: 20px;
 }
-body main #projects .swiper .text-body-secondary img {
-  column-gap: 15px;
-  width: 22px;
+body #projects .swiper .card .project_preview {
+  height: 290px;
+  overflow: hidden;
 }
-body main #projects .swiper .project-preview + img {
+body #projects .swiper .card .project_preview img {
+  object-fit: fill;
+}
+body #projects .swiper .text-body-secondary {
+  padding-bottom: 1rem;
+}
+body #projects .swiper .text-body-secondary img {
+  width: 22px;
+  height: 22px;
+}
+body #projects .swiper .project-preview + img {
   object-fit: cover;
 }
-body main #projects .swiper a {
+body #projects .swiper a {
   transition: box-shadow 0.3s;
 }
-body main #projects .swiper a:link {
+body #projects .swiper a:link {
   text-decoration: none;
 }
-body main #projects .swiper a:visited {
+body #projects .swiper a:visited {
   text-decoration: none;
 }
-body main #projects .swiper a:hover {
+body #projects .swiper a:hover {
   text-decoration: none;
   box-shadow: 0 0 15px rgba(33, 33, 33, 0.2);
 }
-body main #projects .swiper a:active {
+body #projects .swiper a:active {
   text-decoration: none;
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  display: block;
+  border-radius: 0;
+  mix-blend-mode: hard-light;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.cursor .circle {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  filter: blur(5px);
+  background-color: #ffffff;
+}
+
+.bubble-wrap {
+  position: fixed;
+  height: 100%;
+  width: 100vw;
+  z-index: -1;
+}
+.bubble-wrap canvas {
+  width: 100%;
+  height: 100%;
 }
 
 @media only screen and (max-width: 650px) {
@@ -373,6 +425,9 @@ body main #projects .swiper a:active {
   }
   .card {
     height: fit-content;
+  }
+  body main #projects .swiper .card .project_preview {
+    height: 415px;
   }
 }
 
