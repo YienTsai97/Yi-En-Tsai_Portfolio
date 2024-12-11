@@ -345,6 +345,9 @@ body {
 
         .swiper {
 
+
+
+
             .swiper-slide {
                 padding: 0px 50px 0px 50px;
                 display: flex;
@@ -369,7 +372,7 @@ body {
                 }
 
                 .project_preview {
-                    height: 290px;
+                    height: 415px;
                     overflow: hidden;
 
                     img {
@@ -479,9 +482,5 @@ body {
 
     .card {
         height: fit-content;
-    }
-
-    body main #projects .swiper .card .project_preview {
-        height: 415px;
     }
 }
