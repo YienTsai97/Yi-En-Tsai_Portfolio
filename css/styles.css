@@ -347,7 +347,7 @@ body #projects .swiper .card h6 {
   margin-bottom: 20px;
 }
 body #projects .swiper .card .project_preview {
-  height: 290px;
+  height: 415px;
   overflow: hidden;
 }
 body #projects .swiper .card .project_preview img {
@@ -425,9 +425,6 @@ body #projects .swiper a:active {
   }
   .card {
     height: fit-content;
-  }
-  body main #projects .swiper .card .project_preview {
-    height: 415px;
   }
 }
 
