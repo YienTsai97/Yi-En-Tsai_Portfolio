@@ -25,8 +25,8 @@ header li {
   transition: all 1s ease;
 }
 header li a:hover {
-  font-weight: 500;
-  transform: scale(105%);
+  font-weight: 300;
+  transform: scale(103%);
 }
 
 footer {
@@ -359,6 +359,11 @@ body #projects .swiper .text-body-secondary {
 body #projects .swiper .text-body-secondary img {
   width: 22px;
   height: 22px;
+  padding-right: 5px;
+}
+body #projects .swiper .text-body-secondary img {
+  width: auto;
+  max-width: 40px;
 }
 body #projects .swiper .project-preview + img {
   object-fit: cover;
