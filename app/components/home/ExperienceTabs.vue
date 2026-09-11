@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import type { ExperienceGroup } from '~/types/site'
+import type { ExperienceGroup, ExperienceItem } from '~/types/site'
 
 const props = defineProps<{
   groups: ExperienceGroup[]
 }>()
 
-const activeId = ref(props.groups[1]?.id ?? props.groups[0]!.id)
+const preferredTab = props.groups.find(group => group.id === 'volunteer')?.id
+const activeId = ref(preferredTab ?? props.groups[1]?.id ?? props.groups[0]!.id)
 
 const activeGroup = computed(() => {
   return props.groups.find(group => group.id === activeId.value) ?? props.groups[0]!
@@ -28,6 +29,10 @@ const tabViewBoxes: Record<ExperienceGroup['id'], string> = {
 
 const calendarIconPath =
   'M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H336zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H208zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H336c-8.8 0-16 7.2-16 16z'
+
+function itemKey(item: ExperienceItem) {
+  return `${item.title}-${item.period}`
+}
 </script>
 
 <template>
@@ -71,74 +76,49 @@ const calendarIconPath =
       <div class="qualification__sections">
         <div
           v-for="(item, index) in activeGroup.items"
-          :key="`${item.title}-${item.period}`"
+          :key="itemKey(item)"
           class="qualification__data"
+          :class="{ 'qualification__data--end': index % 2 === 0 }"
         >
-          <!-- Even: content on right (legacy pattern) -->
-          <template v-if="index % 2 === 0">
-            <div />
-            <div>
-              <span class="qualification__rounder" />
-              <span class="qualification__line" />
+          <div class="qualification__axis">
+            <span class="qualification__rounder" />
+            <span class="qualification__line" />
+          </div>
+          <div class="qualification__content">
+            <h3 class="qualification__title">
+              {{ item.title }}
+            </h3>
+            <p class="qualification__subtitle">
+              {{ item.organization }}
+            </p>
+            <div class="qualification__calendar">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="12"
+                width="10.5"
+                viewBox="0 0 448 512"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  fill="#808080"
+                  :d="calendarIconPath"
+                />
+              </svg>
+              <span>{{ item.period }}</span>
             </div>
-            <div>
-              <h3 class="qualification__title">
-                {{ item.title }}
-              </h3>
-              <p class="qualification__subtitle">
-                {{ item.organization }}
-              </p>
-              <div class="qualification__calendar">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="12"
-                  width="10.5"
-                  viewBox="0 0 448 512"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    fill="#808080"
-                    :d="calendarIconPath"
-                  />
-                </svg>
-                <span>{{ item.period }}</span>
-              </div>
-            </div>
-          </template>
-
-          <!-- Odd: content on left -->
-          <template v-else>
-            <div>
-              <h3 class="qualification__title">
-                {{ item.title }}
-              </h3>
-              <p class="qualification__subtitle">
-                {{ item.organization }}
-              </p>
-              <div class="qualification__calendar">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="12"
-                  width="10.5"
-                  viewBox="0 0 448 512"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    fill="#808080"
-                    :d="calendarIconPath"
-                  />
-                </svg>
-                <span>{{ item.period }}</span>
-              </div>
-            </div>
-            <div>
-              <span class="qualification__rounder" />
-              <span class="qualification__line" />
-            </div>
-            <div />
-          </template>
+            <ul
+              v-if="item.highlights?.length"
+              class="qualification__highlights"
+            >
+              <li
+                v-for="highlight in item.highlights"
+                :key="highlight"
+              >
+                {{ highlight }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

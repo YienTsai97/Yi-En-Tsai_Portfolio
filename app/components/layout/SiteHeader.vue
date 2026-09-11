@@ -14,34 +14,29 @@ import { site } from '~/data/site'
     <nav aria-label="Primary navigation">
       <ul class="site-header__links">
         <li>
-          <NuxtLink to="/#home">
-            Home
-          </NuxtLink>
+          <a href="/#projects">
+            Work
+          </a>
         </li>
         <li>
-          <NuxtLink to="/#about">
+          <a href="/#about">
             About
-          </NuxtLink>
+          </a>
         </li>
         <li>
-          <NuxtLink to="/#skills">
+          <a href="/#work_experiences">
+            Experience
+          </a>
+        </li>
+        <li>
+          <a href="/#skills">
             Skills
-          </NuxtLink>
+          </a>
         </li>
         <li>
-          <NuxtLink to="/#work_experiences">
-            Work Experiences
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/#projects">
-            Projects
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/#contact">
-            Get in touch!
-          </NuxtLink>
+          <a href="/#contact">
+            Contact
+          </a>
         </li>
       </ul>
     </nav>

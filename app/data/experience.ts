@@ -6,14 +6,14 @@ export const experienceGroups = [
     label: 'Education',
     items: [
       {
-        title: 'Department Of Digital Multimedia Arts, Bachelor Of Design',
-        organization: 'Shih Hsin University, Taipei City, Taiwan (R.O.C.)',
-        period: '2015 - 2019'
+        title: 'Web Development Co-op Diploma',
+        organization: 'Cornerstone International Community College of Canada',
+        period: 'April 2024 – May 2026'
       },
       {
-        title: 'WEB DEVELOPMENT CO-OP',
-        organization: 'Cornerstone International Community College of Canada',
-        period: '2024 - Present'
+        title: 'Bachelor of Design in Digital Multimedia Arts',
+        organization: 'Shih Hsin University, Taipei City, Taiwan',
+        period: '2015 – 2019'
       }
     ]
   },
@@ -22,19 +22,21 @@ export const experienceGroups = [
     label: 'Work',
     items: [
       {
-        title: 'Workshop Teaching Assistant & Exhibition Staff',
-        organization: 'Centre Georges-Pompidou × UDNFUNLIFE CO., LTD. Taipei City, Taiwan (R.O.C.)',
-        period: '2019 - 2020'
-      },
-      {
-        title: 'Mograph Animator',
-        organization: 'Nobility Advertisement Limited Co. Taipei City, Taiwan (R.O.C.)',
-        period: '2020 - 2021'
-      },
-      {
         title: 'Project Coordinator',
-        organization: 'MOTION M VFX Limited Co. Taipei City, Taiwan (R.O.C.)',
-        period: '2023'
+        organization: 'MOTION M VFX Limited Co., Taipei City, Taiwan',
+        period: 'Feb 2023 – Dec 2023',
+        highlights: [
+          'Coordinated design, production, and development teams to deliver commercial projects on schedule.',
+          'Planned the company website and collaborated with developers through implementation.'
+        ]
+      },
+      {
+        title: 'Animator',
+        organization: 'Nobility Advertisement Limited Co., Taipei City, Taiwan',
+        period: 'May 2020 – Nov 2021',
+        highlights: [
+          'Produced animation for concept advertisement projects while coordinating with cross-functional teams.'
+        ]
       }
     ]
   },
@@ -43,14 +45,22 @@ export const experienceGroups = [
     label: 'Volunteer',
     items: [
       {
-        title: 'Blue Ocean Conversation Club Event Staff',
-        organization: 'Blue Ocean International Consulting Inc - Volunteer',
-        period: '2024'
+        title: 'Web Developer Volunteer',
+        organization: 'Canadian Network for International Surgery (CNIS), Vancouver, Canada',
+        period: 'June 2025 – Jan 2026',
+        highlights: [
+          'Automated course enrollment by integrating WooCommerce with Thinkific through a custom WordPress plugin.',
+          'Collaborated with stakeholders on the online course platform and learning workflow.'
+        ]
       },
       {
-        title: 'WEB DEVELOPER',
-        organization: 'Mission Possible',
-        period: '2025.03'
+        title: 'Web Developer Volunteer',
+        organization: 'Mission Possible, Vancouver, Canada',
+        period: 'Mar 2025 – Apr 2025',
+        highlights: [
+          'Maintained the HubSpot CMS site: frontend/backend fixes, SEO metadata, and performance/accessibility improvements.',
+          'Worked with nonprofit stakeholders to ship user-centered updates on a live website.'
+        ]
       }
     ]
   }

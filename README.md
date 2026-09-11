@@ -25,9 +25,9 @@ pnpm build
 
 ## Current scope
 
-- Shared layout and navigation (header / blue footer)
-- Homepage sections migrated from the legacy static site
-- Visual restore: metaball background, circle cursor, experience timeline, projects Swiper carousel
-- `/work` project index and `/work/[slug]` detail pages for the original five projects
+- Recruiter homepage: Hero → Featured work → About → Experience → Skills → Contact
+- Two flagship projects (Vancastro, Plurk Styler) as cards, not a carousel
+- Resume PDF, LinkedIn, GitHub
+- Thin `/work` routes exist but are not the hiring path
 
-Local planning notes live in `doc/` (gitignored), including `migration-map.md` for legacy → Nuxt path mapping.
+Local planning notes live in `doc/` (gitignored).

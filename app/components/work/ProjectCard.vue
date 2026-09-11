@@ -8,17 +8,26 @@ defineProps<{
 
 <template>
   <article class="project-card">
-    <div class="project-card__preview">
-      <img
-        :src="project.previewImage"
-        :alt="`${project.title} preview`"
-      >
-    </div>
+    <a
+      class="project-card__preview-link"
+      :href="project.liveUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div class="project-card__preview">
+        <img
+          :src="project.previewImage"
+          :alt="`${project.title} preview`"
+        >
+      </div>
+    </a>
     <div class="project-card__body">
-      <p class="eyebrow">
-        {{ project.category }}
-      </p>
-      <h3>{{ project.title }}</h3>
+      <div class="project-card__header">
+        <p class="eyebrow">
+          {{ project.category }}
+        </p>
+        <h3>{{ project.title }}</h3>
+      </div>
       <p class="project-card__summary">
         {{ project.summary }}
       </p>
@@ -28,6 +37,19 @@ defineProps<{
       >
         {{ project.role }}
       </p>
+      <dl
+        v-if="project.highlights?.length"
+        class="project-card__highlights"
+      >
+        <div
+          v-for="item in project.highlights"
+          :key="item.label"
+          class="project-card__highlight"
+        >
+          <dt>{{ item.label }}</dt>
+          <dd>{{ item.text }}</dd>
+        </div>
+      </dl>
       <ul
         class="tag-list"
         :aria-label="`${project.title} technologies`"
@@ -49,13 +71,16 @@ defineProps<{
           Live demo
           <span aria-hidden="true">↗</span>
         </a>
-        <NuxtLink
+        <a
+          v-if="project.githubUrl"
           class="text-link"
-          :to="`/work/${project.slug}`"
+          :href="project.githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Details
-          <span aria-hidden="true">→</span>
-        </NuxtLink>
+          GitHub
+          <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </div>
   </article>

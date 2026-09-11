@@ -1,4 +1,8 @@
 <script setup lang="ts">
+/**
+ * Homepage currently uses a two-card ProjectCard grid.
+ * Keep this Swiper carousel (unused) for later, if more projects should rotate.
+ */
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import type { ProjectSummary } from '~/types/project'
@@ -78,13 +82,16 @@ const modules = [Navigation, Pagination]
                 Live demo
                 <span aria-hidden="true">↗</span>
               </a>
-              <NuxtLink
+              <a
+                v-if="project.githubUrl"
                 class="text-link"
-                :to="`/work/${project.slug}`"
+                :href="project.githubUrl"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Details
-                <span aria-hidden="true">→</span>
-              </NuxtLink>
+                GitHub
+                <span aria-hidden="true">↗</span>
+              </a>
             </div>
           </div>
         </article>

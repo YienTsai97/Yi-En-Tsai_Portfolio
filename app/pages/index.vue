@@ -4,9 +4,11 @@ import { projects } from '~/data/projects'
 import { site } from '~/data/site'
 import { skillGroups } from '~/data/skills'
 
+const pageDescription = `${site.heroRole} ${site.heroTagline}`
+
 useSeoMeta({
-  title: "Yi-En Tsai's Portfolio",
-  description: site.aboutBody
+  title: `${site.name} — ${site.roleLabel}`,
+  description: pageDescription
 })
 </script>
 
@@ -14,18 +16,33 @@ useSeoMeta({
   <div>
     <section id="home">
       <div class="hero-copy">
-        <h1>
-          hey there,<br>
-          i'm Yi-En
-        </h1>
-        <p>{{ site.heroSubtitle }}</p>
-        <a
-          class="btn-primary"
-          href="#contact"
-        >
-          contact me
-          <span aria-hidden="true">→</span>
-        </a>
+        <div class="hero-title">
+          <h1>{{ site.heroTitle }}</h1>
+          <p class="hero-role">
+            {{ site.heroRole }}
+          </p>
+          <p class="hero-tagline">
+            {{ site.heroTagline }}
+          </p>
+        </div>
+        <div class="button-row">
+          <a
+            class="btn-primary"
+            :href="site.resumeUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="btn-primary"
+            href="#contact"
+          >
+            Contact me
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
 
       <div class="profile">
@@ -33,6 +50,28 @@ useSeoMeta({
           class="profile-img"
           role="img"
           :aria-label="`${site.name} portrait`"
+        />
+      </div>
+    </section>
+
+    <section
+      id="projects"
+      aria-labelledby="projects-title"
+    >
+      <div class="sectionTop">
+        <h2 id="projects-title">
+          {{ site.projectsTitle }}
+        </h2>
+        <p class="section-kicker">
+          {{ site.projectsSubtitle }}
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <ProjectCard
+          v-for="project in projects"
+          :key="project.slug"
+          :project="project"
         />
       </div>
     </section>
@@ -49,7 +88,30 @@ useSeoMeta({
           {{ site.aboutEyebrow }}
         </p>
       </div>
-      <p>{{ site.aboutBody }}</p>
+      <div class="about-copy">
+        <p
+          v-for="paragraph in site.aboutParagraphs"
+          :key="paragraph"
+        >
+          {{ paragraph }}
+        </p>
+      </div>
+    </section>
+
+    <section
+      id="work_experiences"
+      aria-labelledby="experience-title"
+    >
+      <div class="sectionTop">
+        <h2 id="experience-title">
+          {{ site.experienceTitle }}
+        </h2>
+        <p class="section-kicker">
+          {{ site.experienceSubtitle }}
+        </p>
+      </div>
+
+      <ExperienceTabs :groups="experienceGroups" />
     </section>
 
     <section
@@ -83,38 +145,6 @@ useSeoMeta({
     </section>
 
     <section
-      id="work_experiences"
-      aria-labelledby="experience-title"
-    >
-      <div class="sectionTop">
-        <h2 id="experience-title">
-          {{ site.experienceTitle }}
-        </h2>
-        <p class="section-kicker">
-          {{ site.experienceSubtitle }}
-        </p>
-      </div>
-
-      <ExperienceTabs :groups="experienceGroups" />
-    </section>
-
-    <section
-      id="projects"
-      aria-labelledby="projects-title"
-    >
-      <div class="sectionTop">
-        <h2 id="projects-title">
-          {{ site.projectsTitle }}
-        </h2>
-        <p class="section-kicker">
-          {{ site.projectsSubtitle }}
-        </p>
-      </div>
-
-      <ProjectsCarousel :projects="projects" />
-    </section>
-
-    <section
       id="contact"
       aria-labelledby="contact-title"
     >
@@ -127,6 +157,14 @@ useSeoMeta({
         </p>
       </div>
       <div class="button-row">
+        <a
+          class="btn-primary"
+          :href="site.resumeUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume
+        </a>
         <a
           class="btn-primary"
           :href="site.social.linkedin"

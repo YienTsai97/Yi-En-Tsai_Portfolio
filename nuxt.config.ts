@@ -20,10 +20,7 @@ export default defineNuxtConfig({
         '/',
         '/work',
         '/work/vancastro',
-        '/work/taskpicker',
-        '/work/shoppy',
-        '/work/filmbuff',
-        '/work/ddsgnr'
+        '/work/plurk-styler'
       ]
     }
   },
@@ -32,15 +29,19 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en'
       },
-      title: "Yi-En Tsai's Portfolio",
+      title: 'Yi-En Tsai — Full-Stack Web Developer',
       meta: [
         {
           name: 'description',
           content:
-            'Since 2024, I have been studying Web Development at Cornerstone International Community College of Canada, gaining technical expertise with a strong sense of design.'
+            'Full-Stack Web Developer with a background in digital design. I build practical, user-focused web applications with Vue, React, and TypeScript.'
         }
       ],
       link: [
+        {
+          rel: 'icon',
+          href: 'data:,'
+        },
         {
           rel: 'preconnect',
           href: 'https://fonts.googleapis.com'

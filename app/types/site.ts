@@ -7,6 +7,7 @@ export interface ExperienceItem {
   title: string
   organization: string
   period: string
+  highlights?: string[]
 }
 
 export interface ExperienceGroup {
@@ -19,10 +20,11 @@ export interface SiteContent {
   name: string
   roleLabel: string
   heroTitle: string
-  heroSubtitle: string
+  heroRole: string
+  heroTagline: string
   aboutEyebrow: string
   aboutTitle: string
-  aboutBody: string
+  aboutParagraphs: string[]
   skillsTitle: string
   skillsSubtitle: string
   experienceTitle: string
@@ -31,6 +33,7 @@ export interface SiteContent {
   projectsSubtitle: string
   contactTitle: string
   contactSubtitle: string
+  resumeUrl: string
   social: {
     linkedin: string
     github: string

@@ -4,61 +4,71 @@ export const projects = [
   {
     slug: 'vancastro',
     title: 'Vancastro Driving School',
-    category: 'Driving School Booking System',
+    category: 'Driving-school operations platform',
     summary:
-      'An online booking and management system designed for a driving school, integrating lesson purchases, scheduling, availability management, invoicing, and payment processing to provide a seamless digital experience for both students and instructors.',
+      'A team capstone for booking, scheduling, and lesson management — built for students and instructors, not just a marketing site.',
+    role: 'Team project · frontend ownership',
+    highlights: [
+      {
+        label: 'Dashboards',
+        text: 'Public site plus student and instructor views for booking, scheduling, and lesson management.'
+      },
+      {
+        label: 'Booking',
+        text: 'Availability-aware flow that accounts for lesson length and travel time across Metro Vancouver.'
+      },
+      {
+        label: 'Calendar',
+        text: 'Instructor scheduling UX with FullCalendar and Clerk-protected, role-based navigation.'
+      }
+    ],
     stack: [
       'Next.js',
       'Tailwind CSS',
-      'shadcn',
-      'Node.js',
-      'Express.js',
+      'shadcn/ui',
       'PostgreSQL',
       'Prisma',
       'Clerk',
-      'FullCalendar'
+      'FullCalendar',
+      'QuickBooks API'
     ],
     liveUrl: 'https://vancastro-driving-school-v1.vercel.app/',
+    githubUrl: 'https://github.com/YienTsai97/Vancastro_driving_school_v1',
     previewImage: '/image/project_preview/vancastro.png'
   },
   {
-    slug: 'taskpicker',
-    title: 'TaskPicker',
-    category: 'Kanban board web app',
+    slug: 'plurk-styler',
+    title: 'Plurk Styler',
+    category: 'Visual CSS editor',
     summary:
-      'A Mobile-friendly Kanban board web app with functionalities include drag-and-drop using TypeScript. Responsible for UI and front-end development.',
-    role: 'UI and front-end development',
-    stack: ['JavaScript', 'TypeScript', 'HTML', 'CSS', 'Astro', 'Figma'],
-    liveUrl: 'https://taskpicker-kanban.onrender.com/',
-    previewImage: '/image/project_preview/taskpicker.png'
-  },
-  {
-    slug: 'shoppy',
-    title: 'Shoppy',
-    category: 'shopping website',
-    summary:
-      'A responsive shopping website using OOP. Users can browse a list of products (with images, titles, descriptions, and prices), add items to the cart, adjust quantities, or remove items, and view real-time updates of the item count and total price.',
-    stack: ['JavaScript', 'HTML', 'CSS', 'Bootstrap'],
-    liveUrl: 'https://shoppy-2sza.onrender.com/',
-    previewImage: '/image/project_preview/shoppy.png'
-  },
-  {
-    slug: 'filmbuff',
-    title: 'Filmbufff',
-    category: 'Movie Web App',
-    summary:
-      'A movie website app where it displays the trending movies of the day, which user could search for movies and the details.',
-    stack: ['JavaScript', 'jQuery', 'HTML', 'CSS'],
-    liveUrl: 'https://filmbuff.onrender.com/',
-    previewImage: '/image/project_preview/filmbuff.png'
-  },
-  {
-    slug: 'ddsgnr',
-    title: 'Ddsgnr',
-    category: 'Official Website',
-    summary: 'A fully responsive business website using Astro and tailwind css.',
-    stack: ['JavaScript', 'HTML', 'CSS', 'Astro'],
-    liveUrl: 'https://ddsgnr.onrender.com/',
-    previewImage: '/image/project_preview/ddsgnr.png'
+      'A login-optional visual editor that mirrors a Plurk profile so users can restyle the timeline, posts, and dashboard — then export CSS ready to paste into Plurk.',
+    role: 'Independent product · design through implementation',
+    highlights: [
+      {
+        label: 'Architecture',
+        text: 'Preview DOM, feature modules, and a central style store so only intentional edits ship in export.'
+      },
+      {
+        label: 'Hit-testing',
+        text: 'River, posts, and the custom logo each open the correct menu without blocking each other.'
+      },
+      {
+        label: 'CSS pipeline',
+        text: 'Import/export aligned to selectors verified against live Plurk, not a generic page builder.'
+      }
+    ],
+    stack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Zustand',
+      'Prisma',
+      'NextAuth',
+      'Tailwind CSS',
+      'Radix UI'
+    ],
+    liveUrl: 'https://plurk-styler.vercel.app/editor',
+    githubUrl: 'https://github.com/YienTsai97/plurk-css-editor',
+    previewImage: '/image/project_preview/plurk-styler.png'
   }
 ] satisfies ProjectSummary[]

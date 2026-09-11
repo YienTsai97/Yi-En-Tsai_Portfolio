@@ -13,23 +13,30 @@ import { site } from '~/data/site'
 
     <ul class="site-footer__links">
       <li>
-        <NuxtLink to="/#home">
-          Home
-        </NuxtLink>
+        <a href="/#projects">
+          Work
+        </a>
       </li>
       <li>
-        <NuxtLink to="/#projects">
-          Project
-        </NuxtLink>
+        <a href="/#about">
+          About
+        </a>
       </li>
       <li>
-        <NuxtLink to="/#contact">
+        <a href="/#contact">
           Contact
-        </NuxtLink>
+        </a>
       </li>
     </ul>
 
     <div class="site-footer__social">
+      <a
+        :href="site.resumeUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Resume
+      </a>
       <a
         :href="site.social.linkedin"
         target="_blank"

@@ -22,10 +22,10 @@ useSeoMeta({
   <article class="case-study">
     <NuxtLink
       class="text-link"
-      to="/work"
+      to="/#projects"
     >
       <span aria-hidden="true">←</span>
-      All work
+      Back
     </NuxtLink>
 
     <header class="case-study__header">
@@ -43,6 +43,19 @@ useSeoMeta({
       <p v-if="project.role">
         <strong>Role:</strong> {{ project.role }}
       </p>
+      <dl
+        v-if="project.highlights?.length"
+        class="project-card__highlights"
+      >
+        <div
+          v-for="item in project.highlights"
+          :key="item.label"
+          class="project-card__highlight"
+        >
+          <dt>{{ item.label }}</dt>
+          <dd>{{ item.text }}</dd>
+        </div>
+      </dl>
       <ul
         class="tag-list"
         :aria-label="`${project.title} technologies`"
@@ -54,14 +67,25 @@ useSeoMeta({
           {{ item }}
         </li>
       </ul>
-      <a
-        class="btn-primary"
-        :href="project.liveUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Live demo
-      </a>
+      <div class="button-row">
+        <a
+          class="btn-primary"
+          :href="project.liveUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Live demo
+        </a>
+        <a
+          v-if="project.githubUrl"
+          class="btn-primary"
+          :href="project.githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </div>
     </header>
   </article>
 </template>

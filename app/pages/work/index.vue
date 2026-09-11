@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import { projects } from '~/data/projects'
+import { site } from '~/data/site'
 
 useSeoMeta({
-  title: 'Projects — Yi-En Tsai',
-  description: "what i've built — recent works"
+  title: `Projects — ${site.name}`,
+  description: site.projectsSubtitle
 })
 </script>
 
 <template>
   <section class="work-index">
     <div class="sectionTop">
-      <h1>what i've built</h1>
+      <h1>{{ site.projectsTitle }}</h1>
       <p class="section-kicker">
-        recent works
+        {{ site.projectsSubtitle }}
       </p>
     </div>
 
